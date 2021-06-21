@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import {useLocation} from "react-router";
-import {Link} from "react-router-dom";
-import './css/article.css';
-import articlepicture from './img/article.png';
+import {Link,NavLink} from "react-router-dom";
+
+import GoTop from '../Feature/gotop'
+import '../css/article.css';
+import articlepicture from '../img/article.png';
+import backgroundIcon from '../img/bg.png'
 
 const SearchComponent = () => {
 
@@ -24,18 +27,20 @@ const SearchComponent = () => {
         )
         .map((list,index)=>
         <div className="courses-container" key={index}>
-            <div className="course">
-                <div className="course-preview">
+            <div className="course" style={{backgroundColor: list.privacy ? "#FFA07A" : "#DCDCDC"}}>
+                <div className="course-preview" style={{backgroundColor: list.privacy ? "#FFA07A" : "#DCDCDC"}}>
                     <img src={articlepicture}  alt=""/>
                 </div>
                 <div className="course-info">
+                <NavLink to={"/home/"+list.user} style={{textDecoration:"none"}} >
                     <h6>{list.user}</h6>
-                <Link to={"/article/"+list.id} >
-                    <h2>【{list.category}】{list.title}</h2>
-                </Link>
-                <Link to={"/article/"+list.id} >
+                </NavLink>
+                <NavLink to={"/article/"+list.id} >
+                    <h5>【{list.category}】{list.title}</h5>
+                </NavLink>
+                <NavLink to={"/article/"+list.id} >
                     <button className="articlesbtn">閱讀全文</button>
-                </Link> 
+                </NavLink> 
                 </div>
             </div>
         </div>
@@ -47,8 +52,12 @@ const SearchComponent = () => {
     useEffect(()=>{FetchArticle()},[]);
 
     return (
-        <div style={{margin:"0 auto",width:"50%"}}>
-            {reason}
+        <div style={{width:"100%",backgroundImage:`url(${backgroundIcon})`,minHeight:"659px"}}>
+            <hr className="article-separate"/>
+            <div style={{margin:"0 auto",width:"50%"}}>
+                {reason}
+                <GoTop/>
+            </div>
         </div>
     );
 };

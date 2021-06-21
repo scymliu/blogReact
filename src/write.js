@@ -8,6 +8,12 @@ const WriteArticle = () => {
 
     const { register, handleSubmit } = useForm();
     const username=JSON.parse(localStorage.getItem('token')).username;
+
+    const textareaHeight = (textarea) =>{
+        textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+
     const onSubmit = data => {
         const requestOptions = {
             method: 'POST',
@@ -50,10 +56,11 @@ const WriteArticle = () => {
                     </Form.Row>
                     <Form.Group>
                         <Form.Label>內容</Form.Label>
-                        <Form.Control as="textarea" rows={10} style={{fontSize:"15px"}} {...register("content")}/>
+                        <Form.Control as="textarea" rows={18} style={{fontSize:"15px",resize:"none",padding:"0"}} {...register("content")}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicCheckbox" style={{margin:"auto",fontSize:"10px"}}>
-                        <Form.Check type="checkbox" label="斯私人文章" {...register("privacy")}/>
+                        <Form.Check style={{fontSize:"15px"}} type="checkbox" label="私人文章" {...register("privacy")}/>
+                        <br/>
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         發布

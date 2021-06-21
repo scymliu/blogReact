@@ -1,6 +1,5 @@
 .courses-container{
-	margin:"0px auto";
-	width:'80%'
+	width:'100%'
 }
 
 .course {
@@ -19,7 +18,7 @@
 	letter-spacing: 1px;
 }
 
-.course h2 {
+.course h5 {
 	letter-spacing: 1px;
 	margin: 10px 0;
 }
@@ -54,6 +53,11 @@
 
 .course-info a{
 	color: #000;
+	
+}
+
+.course-info p{
+	font-size:10px;
 }
 
 .articlesbtn {
@@ -69,3 +73,113 @@
 	right: 20px;
 	letter-spacing: 1px;
 }
+
+.lookfirst {
+    position: relative;
+    display: inline-block;
+}
+
+.lookfirst .lookfirsttext {
+    visibility: hidden;
+    width: 120px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* 定位 */
+    position: absolute;
+    z-index: 1;
+}
+
+.lookfirst:hover .lookfirsttext {
+    visibility: visible;
+}
+
+
+.article-container{
+	min-height:651px;
+}
+
+.article-course{
+	margin:0 auto;
+	width:60%;
+	min-height:659px;
+	background-color: #FAF9F8;
+	border-left-style:solid;
+	border-right-style:solid;
+}
+
+.article-head{
+	display:flex;
+	background-color: #e5e5e5;
+}
+
+.article-head p{
+	font-size: 25px;
+	font-family:'Times New Roman', Times, serif;
+	flex:9
+}
+.article-head-button{
+	display:flex;
+	align-items:center;
+	float:right;
+	flex:1
+}
+.article-head-button button{
+	min-width: 20px;
+	min-height: 80px;
+	font-size: 15px;
+}
+
+.article-info{
+	background-color: #F2F1F0;
+	font-size: 15px;
+}
+
+.article-info-contain{
+	display:flex;
+	color:#444;
+}
+
+.article-info-aritcle{
+	flex:8;
+}
+.article-info-edit{
+	text-align: right;
+	flex:1;
+}
+.article-info-edit img{
+	max-width: 50px;
+	max-height: 50px;
+}
+
+.article-info-date{
+	line-height:50px;
+	color:#222;
+}
+.article-body{
+	position:relative;
+	background-color: #FAF9F8;
+	margin:0 auto;
+}
+
+.article-body-text{
+	font-family:'Times New Roman', Times, serif;
+	white-space:"pre";
+	line-height: 33px;
+	font-size: 20px;
+}
+
+textarea.article-body-contain{
+	background:transparent;
+	border-style:none;
+}
+
+hr.article-separate{
+	margin:0px;
+    height:1px;
+    background: black;
+}
+
